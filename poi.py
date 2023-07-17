@@ -2,7 +2,7 @@ from telegram.ext import CallbackContext, Updater, MessageHandler, Filters, Comm
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton, ReplyKeyboardMarkup
 import json
 import os 
-from likedb import LikeDB
+from db import LikeDB
 db = LikeDB("users.json")
 TOKEN = os.environ['TOKEN']
 
