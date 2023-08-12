@@ -1,10 +1,11 @@
-from time import sleep
+from flask import Flask,request
 import telegram
-import os 
-TOKEN = os.environ['TOKEN']
+app = Flask(__name__)
+TOKEN="6031625012:AAFdxBk9YBo_m2U4llpFUk854ZoLXTPWSZ0"
 bot = telegram.Bot(TOKEN)
 m=0
-while True:
+@app.route("/bot")
+def bot():
     update=bot.getUpdates()
     chat_id=update[-1].message.chat.id
     if len(update)!=m:
@@ -46,4 +47,3 @@ while True:
             dokument=bot.send_document(chat_id,document)
             print(dokument)
     m=len(update)
-    sleep(2)
