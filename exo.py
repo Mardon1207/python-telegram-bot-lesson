@@ -3,7 +3,6 @@ import telegram
 app = Flask(__name__)
 TOKEN="6031625012:AAFdxBk9YBo_m2U4llpFUk854ZoLXTPWSZ0"
 bot = telegram.Bot(TOKEN)
-data=request.get_json()
 m=0
 @app.route("/bot")
 def bot():
